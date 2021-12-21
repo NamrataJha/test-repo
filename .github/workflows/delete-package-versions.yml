@@ -15,7 +15,7 @@ jobs:
             owner: NamrataJha
             repo: test-repo
             package-name: test-repo
-            min-versions-to-keep: 100
+            num-old-versions-to-delete: 180
 
  
 
