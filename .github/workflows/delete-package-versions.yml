@@ -8,12 +8,12 @@ jobs:
     
     steps:
       - name: Delete package
-        uses: actions/delete-package-versions@d846be5128e29a5e0be82504033990775c5fb1bc
+        uses: actions/delete-package-versions@508f6970a5f85097117972847749c79e0a276b26
         with: 
             owner: NamrataJha
             repo: test-repo
             package-name: test-repo
-            num-old-versions-to-delete: 180
+            min-versions-to-keep: 50
 
  
 
