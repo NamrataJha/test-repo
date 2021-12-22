@@ -1,7 +1,5 @@
 name: delete-old-packages
 on:
-  registry_package:
-    types: [published]
   workflow_dispatch:
 
 jobs:
