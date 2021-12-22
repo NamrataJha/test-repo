@@ -8,7 +8,7 @@ jobs:
     
     steps:
       - name: Delete package
-        uses: actions/delete-package-versions@1a7a0291b8a2e8b96794bfb7cc7da2cef0509203
+        uses: actions/delete-package-versions@8283350471d9e648bf28ae366f80671aa50d528e
         with: 
             owner: NamrataJha
             repo: test-repo
