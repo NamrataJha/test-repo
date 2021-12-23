@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        node: ['test-repo','test-repo','test-repo','test-repo','test-repo','test-repo']
+        node: ['test-repo']
     
     steps:
       - name: Delete package
@@ -18,7 +18,8 @@ jobs:
             owner: NamrataJha
             repo: test-repo
             package-name: ${{ matrix.node }}
-            min-versions-to-keep: 50
+            num-old-versions-to-delete: 150
+            ignore-versions: "^(0|[1-9]\\d*)\\.0\\.0$"
 
  
 
