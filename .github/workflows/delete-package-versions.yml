@@ -5,28 +5,19 @@ on:
 jobs:
   delete-old-packages:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        node: ['test-repo','test-repo','test-repo','test-repo','test-repo','test-repo']
     
     steps:
       - name: Delete package
-        uses: actions/delete-package-versions@8283350471d9e648bf28ae366f80671aa50d528e
+        uses: actions/delete-package-versions@f556b07dce45d90d66380d9848d242790157389e
         with: 
             owner: NamrataJha
             repo: test-repo
-            package-name: test-repo
-            min-versions-to-keep: 50
-      - name: Delete package
-        uses: actions/delete-package-versions@8283350471d9e648bf28ae366f80671aa50d528e
-        with: 
-            owner: NamrataJha
-            repo: test-repo
-            package-name: test-repo
-            min-versions-to-keep: 50
-      - name: Delete package
-        uses: actions/delete-package-versions@8283350471d9e648bf28ae366f80671aa50d528e
-        with: 
-            owner: NamrataJha
-            repo: test-repo
-            package-name: test-repo
+            package-name: ${{ matrix.node }}
             min-versions-to-keep: 50
 
  
